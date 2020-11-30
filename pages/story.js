@@ -7,9 +7,6 @@ import CommentList from "./../components/CommentList";
 class Story extends React.Component {
 
   static async getInitialProps({ req, res, query }) {
-    console.log(req)
-    console.log(res)
-    console.log(query)
     let story;
     try {
       const storyId = query.id;
