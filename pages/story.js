@@ -5,7 +5,11 @@ import Layout from "./../components/Layout";
 import CommentList from "./../components/CommentList";
 
 class Story extends React.Component {
+
   static async getInitialProps({ req, res, query }) {
+    console.log(req)
+    console.log(res)
+    console.log(query)
     let story;
     try {
       const storyId = query.id;
@@ -39,10 +43,10 @@ class Story extends React.Component {
             <strong>{story.comments_count}</strong>
             <strong>{story.time_ago}</strong>
           </div>
-          
+
           {story.comments.length > 0 ? (
             <CommentList comments={story.comments} />
-            ) 
+            )
             : (<div>No comments in this story</div>)
           }
 
